@@ -1,0 +1,1 @@
+This project shows a basic 1D random walk in effect. It utilizes a pseudorandom number generator contained within the Java subset, and directs a chosen particle to move either up one space or down one space, all while continiuosly moving the particle to the right of the screen. 
