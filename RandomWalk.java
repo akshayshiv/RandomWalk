@@ -32,7 +32,7 @@ public class RandomWalk
         int xdiff = 11;
         int ydiff = 12;
         
-        g.drawLine(one, two, three, four);
+        g.drawLine(pos[0],pos[1],pos[2], pos[3]);      //draws the newly formed line
         
         for(int i = 0; i < 65; i++)
         {
