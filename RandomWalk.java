@@ -26,33 +26,32 @@ public class RandomWalk
         g.setColor(Color.RED);
         double rand;
         //starting position of the line
-        int one = 35; 
-        int two = 445;
-        int three = 46; 
-        int four = 432;
+        int[] pos = [35, 445, 446, 46, 432]; //These are the starting positions of the line 
+        
         //difference between start and end points for each coordinate
         int xdiff = 11;
         int ydiff = 12;
+        
         g.drawLine(one, two, three, four);
         
         for(int i = 0; i < 65; i++)
         {
            rand = Math.random();  //generates a random value between 0.0 and 0.99
-           one += xdiff;          //increments the initial x location of the line to the right
-           three += xdiff;        //increments the final x location of the line to the right
+           pos[0] += xdiff;          //increments the initial x location of the line to the right
+           pos[2] += xdiff;        //increments the final x location of the line to the right
            if(rand < .5)
            {
-              two = four;     //sets the final y equal to the initial y so the pen that is
+              pos[1] = pos[3];     //sets the final y equal to the initial y so the pen that is
                               //drawing is moved accordingly   
-              four += ydiff;  //moves the final y point ydiff up
-              g.drawLine(one,two,three, four);      //draws the newly formed line
+              pos[3] += ydiff;  //moves the final y point ydiff up
+              g.drawLine(pos[0],pos[1],pos[2], pos[3]);      //draws the newly formed line
            }
            else
            {
-              two = four;    //sets the final y equal to the initial y so the pen that is
+              pos[1] = pos[3];    //sets the final y equal to the initial y so the pen that is
                              //drawing is moved accordingly  
-              four -= ydiff;   //moves the final y point ydiff down
-              g.drawLine(one,two,three,four);       //draws the newly formed line
+              pos[3] -= ydiff;   //moves the final y point ydiff down
+              g.drawLine(pos[0],pos[1],pos[2], pos[3]);      //draws the newly formed line
             }
         }  
     }
